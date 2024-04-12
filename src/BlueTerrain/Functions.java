@@ -20,6 +20,10 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 public class Functions {
 
     public static Connection getConnection() {
@@ -49,16 +53,16 @@ public class Functions {
         StackPane lightBluePadding = new StackPane();
         lightBluePadding.setBackground(new Background(new BackgroundFill(lightBlue, CornerRadii.EMPTY, Insets.EMPTY)));
         lightBluePadding.setPadding(new Insets(10));
-        
+
         Label welcomeLabel = new Label("Welcome to BlueTerrain");
         welcomeLabel.setFont(Font.font("Arial", FontWeight.BOLD, 25));
         welcomeLabel.setStyle("-fx-text-fill: darkblue;");
-        
+
         lightBluePadding.getChildren().add(welcomeLabel);
 
         return lightBluePadding;
     }
-    
+
     public static HBox createLabeledField(String labelText, String promptText) {
         HBox box = new HBox(10);
         Label label = new Label(labelText);
@@ -96,7 +100,7 @@ public class Functions {
     public static VBox createRootVBox() {
         VBox root = new VBox();
         root.setAlignment(Pos.CENTER);
-        root.setSpacing(10); 
+        root.setSpacing(10);
         root.setPadding(new Insets(20));
         return root;
     }
